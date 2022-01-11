@@ -115,16 +115,15 @@ int main(void)
 		  continue;
 	  }
 
-	  userButtonPressed = true;
-      step++;
+     userButtonPressed = true;
+     step++;
 	  if (step % 4 == 0){
 	  	 stop_motor();
 	  	 motorDirection = motorDirection == left ? right : left;
 	  } else {
-		  motorDirection == left ? accelarate_motor_left() : accelarate_motor_right();
-		}
-
-	}
+        motorDirection == left ? accelarate_motor_left() : accelarate_motor_right();
+      }
+  }
 }
 
 bool is_user_button_down(void)
@@ -139,11 +138,11 @@ void stop_motor(void)
 }
 
 void accelarate_motor_left(void) {
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_8, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_8, GPIO_PIN_SET);
 }
 
 void accelarate_motor_right(void) {
-	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_9, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_9, GPIO_PIN_SET);
 }
 
 
